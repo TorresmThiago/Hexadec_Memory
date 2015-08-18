@@ -6,47 +6,52 @@ public class RotationScript : MonoBehaviour {
 
 	private string isRotating = null;
 	private GameObject card;
+	private GameObject card_2;
 
-	IEnumerator FixAngle(GameObject toFix){
+
+	void FixAngle(GameObject toFix){
 		switch ((int)toFix.transform.localEulerAngles.y) {
 			case 179:
 				toFix.transform.rotation = Quaternion.Euler (0, 180, 0);
-				isRotating = null;
-				yield return new WaitForSeconds (2f);
-				isRotating = "Back";
+				//isRotating = null;
+				//card = null;
 				break;
 
 			case 359:
 				toFix.transform.rotation = Quaternion.Euler (0, 0, 0);
-				print("Imma here?");
 				isRotating = null;
-				card = null;
+				//card = null;
 				break;
 		}
-
-
 	}
 
 	public void Move(GameObject btn){
 		Quaternion newRotation = Quaternion.AngleAxis (180, Vector3.down);
 		btn.transform.rotation = Quaternion.Slerp (btn.transform.rotation, newRotation, 0.1f);
-		StartCoroutine(FixAngle(btn));
+		FixAngle (btn);
 	}
 
 	public void MoveBack(GameObject btn){
 		Quaternion newRotation = Quaternion.AngleAxis (0, Vector3.up);
 		btn.transform.rotation = Quaternion.Slerp (btn.transform.rotation, newRotation, 0.1f);
-		StartCoroutine(FixAngle(btn));
+		FixAngle (btn);
 	}
 
 	public void Change(GameObject btn){
-		card = btn;
+		if (card == null) {
+			card = btn;
+		} else {
+			card_2 = btn;
+		}
+
 		isRotating = "Front";
 	}
 
 	void Update(){
 		if(isRotating == "Front"){
 			Move(card);
+			if(card_2 != null)
+				Move(card_2);
 		} else if(isRotating == "Back"){
 			MoveBack(card);
 		}
