@@ -47,6 +47,14 @@ public class RotationScript : MonoBehaviour {
 		isRotating = "Front";
 	}
 
+	bool verify(GameObject btn_a, GameObject btn_b){
+		if (gameObject.GetComponent<CheckMatch> ().check (btn_a, btn_b)) {
+			return true;	
+		}
+
+		return false;
+	}
+
 	void Update(){
 		if(isRotating == "Front"){
 			Move(card);

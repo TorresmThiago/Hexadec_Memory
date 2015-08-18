@@ -10,7 +10,7 @@ public class CheckMatch : MonoBehaviour {
 		return hex;
 	}
 
-	bool check(GameObject btn_a, GameObject btn_b){
+	public bool check(GameObject btn_a, GameObject btn_b){
 		string hex_a = returnHex (btn_a);
 		string hex_b = returnHex (btn_b);
 
