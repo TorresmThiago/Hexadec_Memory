@@ -32,7 +32,7 @@ public class Title_Animation : MonoBehaviour {
 	}
 
 	void Update(){
-		if (HexaText.transform.position.y >= 45/10) {
+		if (HexaText.transform.position.y >= 48/10) {
 			Down = true;
 			Up = false;
 		} else if(HexaText.transform.position.y <= 39/10){

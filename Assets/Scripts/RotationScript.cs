@@ -4,8 +4,8 @@ using System.Collections;
 
 public class RotationScript : MonoBehaviour {
 
-	private GameObject card_1 = null;
-	private GameObject card_2 = null;
+	public GameObject card_1 = null;
+	public GameObject card_2 = null;
 	private string direction;
 	private bool hasCalled = false;
 
