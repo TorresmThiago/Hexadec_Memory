@@ -12,11 +12,11 @@ public class RotationScript : MonoBehaviour {
 	public void Change(GameObject btn){
 		if (card_1 == null) {
 			card_1 = btn;
+			direction = "Front";
 		} else if(card_2 == null){
 			card_2 = btn;
+			direction = "Front";
 		}
-
-		direction = "Front";
 	}
 
 	void FixAngle(GameObject toFix){
