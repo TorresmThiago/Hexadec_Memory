@@ -68,7 +68,7 @@ public class RotationScript : MonoBehaviour {
 	}
 
 	IEnumerator CompareCard(){
-		yield return new WaitForSeconds (1);
+		yield return new WaitForSeconds (.23f);
 		if (verify()) {
 			//Implementar fadeOut
 			Destroy (card_1);
@@ -89,9 +89,11 @@ public class RotationScript : MonoBehaviour {
 	void Update(){
 		if (direction == "Front") {
 			Move();
+			GetComponent<Card_Content>().Content(card_1);
 		} else if(direction == "Back"){
 			MoveBack();
 		}
+
 	}
 
 }

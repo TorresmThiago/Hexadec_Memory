@@ -8,7 +8,6 @@ public class Card_Sorter : MonoBehaviour {
 	public GameObject Grid;
 	public GameObject SrtGrid;
 	private string type;
-	//private string[] rdColors = new string[18];
 	private List<string> rdColors = new List<string>();
 
 	void Awake () {
@@ -17,8 +16,14 @@ public class Card_Sorter : MonoBehaviour {
 
 	void SortCards(){
 		int index = 0;
-		rdColors.Sort ();
 
+		for (int i = 0; i < rdColors.Count; i++) {
+			string temp = rdColors[i];
+			int randomIndex = Random.Range(i, rdColors.Count);
+			rdColors[i] = rdColors[randomIndex];
+			rdColors[randomIndex] = temp;
+		}
+		
 		for(int i = 0; i < rdColors.Count; i++){
 
 			if(Grid.GetComponentInChildren<Button>().tag == "Untagged"){
