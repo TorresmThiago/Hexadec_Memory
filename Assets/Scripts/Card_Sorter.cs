@@ -1,29 +1,50 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using System.Collections.Generic;
 
 public class Card_Sorter : MonoBehaviour {
 
 	public GameObject Grid;
+	public GameObject SrtGrid;
 	private string type;
-	private Color[] rdColors = new Color[9];
+	//private string[] rdColors = new string[18];
+	private List<string> rdColors = new List<string>();
 
 	void Awake () {
 		Fill ();
 	}
 
-	void Fill(){
-		/*foreach(GameObject row in Grid){
-			foreach(GameObject txt in row) {
-				foreach(GameObject txt in btn) {
-					
-				}
+	void SortCards(){
+		int index = 0;
+		rdColors.Sort ();
+
+		for(int i = 0; i < rdColors.Count; i++){
+
+			if(Grid.GetComponentInChildren<Button>().tag == "Untagged"){
+				Grid.GetComponentInChildren<Button>().GetComponentInChildren<Text>().text = rdColors[index];
+				Grid.GetComponentInChildren<Button>().transform.parent = SrtGrid.transform;
 			}
-		}*/
-		for (int i = 0; i < rdColors.Length; i++) {
-			Color rdColor = new Color(Random.value, Random.value, Random.value, 1.0f);
-			rdColors[i] = rdColor;
+
+			index++;
+
 		}
+
+	}
+
+	void Fill(){
+
+		for (int i = 0; i < 9; i++) {
+			Color rdColor = new Color(Random.value, Random.value, Random.value, 1.0f);
+
+			string a = "Cod" + rdColor.ToString();
+			string b = "Col" + rdColor.ToString();
+
+			rdColors.Add(a);
+			rdColors.Add(b);
+		}
+
+		SortCards ();
 	}
 
 }
