@@ -11,9 +11,16 @@ public class Title_Animation : MonoBehaviour {
 	public GameObject MemoText;
 	public Camera MainCamera;
 	private Color bgColor;
+	private bool onMenu;
+
+	void Awake(){
+		if (HexaText != null || MemoText != null)
+			onMenu = true;
+	}
 
 	void Start(){
-		StartCoroutine (IsMoving ());
+		if(onMenu)
+			StartCoroutine (IsMoving ());
 		StartCoroutine (ColorShifter ());
 	}
 
@@ -32,12 +39,14 @@ public class Title_Animation : MonoBehaviour {
 	}
 
 	void Update(){
-		if (HexaText.transform.position.y >= 48/10) {
-			Down = true;
-			Up = false;
-		} else if(HexaText.transform.position.y <= 39/10){
-			Up = true;
-			Down = false;
+		if (onMenu) {
+			if (HexaText.transform.position.y >= 48/10) {
+				Down = true;
+				Up = false;
+			} else if(HexaText.transform.position.y <= 39/10){
+				Up = true;
+				Down = false;
+			}
 		}
 	}
 
@@ -50,7 +59,7 @@ public class Title_Animation : MonoBehaviour {
 			
 			while( time < 1.0f ){
 				MainCamera.backgroundColor = Color.Lerp(currentColor, bgColor, time );
-				yield return new WaitForSeconds (0.023f);
+				yield return new WaitForSeconds (0.0123f);
 				time += Time.deltaTime;
 			}
 		}
