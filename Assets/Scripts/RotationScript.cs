@@ -37,12 +37,14 @@ public class RotationScript : MonoBehaviour {
 			Quaternion newRotation = Quaternion.AngleAxis (180, Vector3.down);
 			card_1.transform.rotation = Quaternion.Slerp (card_1.transform.rotation, newRotation, 0.1f);
 			FixAngle(card_1);
+			GetComponent<Card_Content>().Content(card_1);
 		}
 
 		if ((card_2 != null) && (card_2.transform.localEulerAngles.y != 180)) {
 			Quaternion newRotation = Quaternion.AngleAxis (180, Vector3.down);
 			card_2.transform.rotation = Quaternion.Slerp (card_2.transform.rotation, newRotation, 0.1f);
 			FixAngle(card_2);
+			GetComponent<Card_Content>().Content(card_2);
 		} else if (((card_2 != null) && (card_1 != null)) && (card_2.transform.localEulerAngles.y == 180) && (hasCalled)) {
 			StartCoroutine(CompareCard());
 			hasCalled = false;
@@ -54,12 +56,14 @@ public class RotationScript : MonoBehaviour {
 			Quaternion newRotation = Quaternion.AngleAxis (0, Vector3.up);
 			card_1.transform.rotation = Quaternion.Slerp (card_1.transform.rotation, newRotation, 0.1f);
 			FixAngle(card_1);
+			GetComponent<Card_Content>().Content(card_1);
 		}
 		
 		if ((card_2 != null) && (card_2.transform.localEulerAngles.y != 0)) {
 			Quaternion newRotation = Quaternion.AngleAxis (0, Vector3.up);
 			card_2.transform.rotation = Quaternion.Slerp (card_2.transform.rotation, newRotation, 0.1f);
 			FixAngle(card_2);
+			GetComponent<Card_Content>().Content(card_2);
 		} else if ((card_2 != null) && (card_2.transform.localEulerAngles.y == 0)) {
 			card_1 = null;
 			card_2 = null;
@@ -89,7 +93,6 @@ public class RotationScript : MonoBehaviour {
 	void Update(){
 		if (direction == "Front") {
 			Move();
-			GetComponent<Card_Content>().Content(card_1);
 		} else if(direction == "Back"){
 			MoveBack();
 		}

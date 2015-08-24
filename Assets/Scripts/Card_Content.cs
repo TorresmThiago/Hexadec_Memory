@@ -10,11 +10,31 @@ public class Card_Content : MonoBehaviour {
 
 		if (crdCode[2] == 'l') {
 		
-			//btn.backgroundColor = Color.Lerp(currentColor, bgColor, time );
+			if((int)btn.transform.localEulerAngles.y >= 90){
+				//Mostrar
+				print("Estou mostrando");
+				btn.GetComponentInChildren<Text>().GetComponent<Text>().enabled = true;
+			}
+			
+			if((int)btn.transform.localEulerAngles.y >= 270){
+				//Nao Mostrar
+				print("Nao Estou mostrando");
+				btn.GetComponentInChildren<Text>().GetComponent<Text>().enabled = false;
+			}
 
 		} else if (crdCode[2] == 'd') {
 		
-			//btn.GetComponentInChildren<Text>().GetComponent<Text>().enabled = true;
+			if((int)btn.transform.localEulerAngles.y >= 90){
+				//Mostrar
+				print("Estou mostrando");
+				btn.GetComponentInChildren<Text>().GetComponent<Text>().enabled = true;
+			}
+
+			if((int)btn.transform.localEulerAngles.y >= 270){
+				//Nao Mostrar
+				print("Nao Estou mostrando");
+				btn.GetComponentInChildren<Text>().GetComponent<Text>().enabled = false;
+			}
 
 		}
 	}
