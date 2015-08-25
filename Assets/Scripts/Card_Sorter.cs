@@ -43,11 +43,16 @@ public class Card_Sorter : MonoBehaviour {
 			Color rdColor = new Color(Random.value, Random.value, Random.value, 1.0f);
 			gameObject.GetComponent<Card_Content>().GetColor(rdColor);
 
-			string a = "Cod" + rdColor.ToString();
-			string b = "Col" + rdColor.ToString();
+			int r = (int)Mathf.Floor(rdColor.r * 255);
+			int g = (int)Mathf.Floor(rdColor.g * 255);
+			int b = (int)Mathf.Floor(rdColor.b * 255);
+			string toShow = r.ToString("X2") + g.ToString("X2") + b.ToString("X2");
+			
+			string code = "#" + toShow;
+			string color = "C" + toShow;
 
-			rdColors.Add(a);
-			rdColors.Add(b);
+			rdColors.Add(code);
+			rdColors.Add(color);
 		}
 
 		SortCards ();
