@@ -6,11 +6,7 @@ using System.Collections.Generic;
 public class Card_Content : MonoBehaviour {
 
 	private List<Color> Clrs = new List<Color>();
-
-	void Awake(){
 	
-	}
-
 	public void GetColor(Color clr){
 		Clrs.Add (clr);	
 	}
@@ -19,7 +15,6 @@ public class Card_Content : MonoBehaviour {
 
 		string crdCode = btn.GetComponentInChildren<Text> ().text;
 		Color tempClr = new Color(1,1,1,1); 
-
 
 		if (crdCode[2] == 'l') {
 
@@ -31,8 +26,6 @@ public class Card_Content : MonoBehaviour {
 					if(Clrs[i].ToString() == crdCode)
 					btn.GetComponent<Image>().color = Clrs[i];
 				}
-
-
 			}
 			
 			if((int)btn.transform.localEulerAngles.y >= 270){
@@ -42,17 +35,23 @@ public class Card_Content : MonoBehaviour {
 
 		} else if (crdCode[2] == 'd') {
 		
-			//btn.GetComponentInChildren<Text>().transform.rotation = Quaternion.Euler (0, 180, 0);
-
 			if((int)btn.transform.localEulerAngles.y >= 90){
 				//Mostrar
-				//print("Estou mostrando");
 				btn.GetComponentInChildren<Text>().GetComponent<Text>().enabled = true;
+
+				for(int i = 0; i < Clrs.Count; i++){
+					if(Clrs[i].ToString() == crdCode.Substring(3)){
+						int r = (int)Mathf.Floor(Clrs[i].r * 255);
+						int g = (int)Mathf.Floor(Clrs[i].g * 255);
+						int b = (int)Mathf.Floor(Clrs[i].b * 255);
+						string toShow = "#" + r.ToString("X2") + g.ToString("X2") + b.ToString("X2");
+						print(toShow);
+					}	
+				}
 			}
 
 			if((int)btn.transform.localEulerAngles.y >= 270){
 				//Nao Mostrar
-				//print("Nao Estou mostrando");
 				btn.GetComponentInChildren<Text>().GetComponent<Text>().enabled = false;
 			}
 
