@@ -58,4 +58,10 @@ public class Card_Sorter : MonoBehaviour {
 		SortCards ();
 	}
 
+	void Update(){
+		if (SrtGrid.GetComponentInChildren<Button> () == null) {
+			Application.LoadLevel (0);
+		}
+	}
+
 }
