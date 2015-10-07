@@ -52,6 +52,7 @@
      <Compile Include="Assets\Scripts\CheckMatch.cs" />
      <Compile Include="Assets\Scripts\RotationScript.cs" />
      <Compile Include="Assets\Scripts\Title_Animation.cs" />
+     <Compile Include="Assets\SimpleParticlePack\Scripts\ParticleTester.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.2/UnityEngine.UI.dll</HintPath>
  </Reference>
