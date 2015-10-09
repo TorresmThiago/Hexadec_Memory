@@ -50,6 +50,7 @@
      <Compile Include="Assets\Scripts\Card_Content.cs" />
      <Compile Include="Assets\Scripts\Card_Sorter.cs" />
      <Compile Include="Assets\Scripts\CheckMatch.cs" />
+     <Compile Include="Assets\Scripts\ColorLibrary.cs" />
      <Compile Include="Assets\Scripts\RotationScript.cs" />
      <Compile Include="Assets\Scripts\Title_Animation.cs" />
  <Reference Include="UnityEngine.UI">
