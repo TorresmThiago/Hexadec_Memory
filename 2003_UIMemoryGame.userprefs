@@ -1,8 +1,13 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Title_Animation.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Card_Content.cs">
     <Files>
-      <File FileName="Assets\Scripts\Title_Animation.cs" Line="18" Column="42" />
+      <File FileName="Assets\Scripts\ButtonManager.cs" Line="16" Column="1" />
+      <File FileName="Assets\Scripts\Card_Content.cs" Line="44" Column="48" />
+      <File FileName="Assets\Scripts\Card_Sorter.cs" Line="68" Column="1" />
+      <File FileName="Assets\Scripts\CheckMatch.cs" Line="25" Column="1" />
+      <File FileName="Assets\Scripts\RotationScript.cs" Line="102" Column="2" />
+      <File FileName="Assets\Scripts\Title_Animation.cs" Line="34" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

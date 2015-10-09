@@ -7,6 +7,8 @@ public class Card_Content : MonoBehaviour {
 	
 	private List<Color> Clrs = new List<Color>();
 	private string tempClr;
+	public Sprite cardImg;
+	public Sprite ctnImg;
 
 	public void GetColor(Color clr){
 		Clrs.Add (clr);	
@@ -29,14 +31,17 @@ public class Card_Content : MonoBehaviour {
 					int b = (int)Mathf.Floor(Clrs[i].b * 255);
 					string toShow = "C" + r.ToString("X2") + g.ToString("X2") + b.ToString("X2");
 
-					if(toShow == crdCode)
+					if(toShow == crdCode){
 						btn.GetComponent<Image>().color = Clrs[i];
+						btn.GetComponent<Image>().sprite = ctnImg;
+					}
 				}
 			}
 			
 			if((int)btn.transform.localEulerAngles.y >= 270){
 				//Nao Mostrar
-				btn.GetComponent<Image>().color = new Color(1,1,1,1);;
+				btn.GetComponent<Image>().color = new Color(1,1,1,1);
+				btn.GetComponent<Image>().sprite = cardImg;
 			}
 
 		} else if (crdCode[0] == '#') {
@@ -45,6 +50,8 @@ public class Card_Content : MonoBehaviour {
 				//Mostrar
 				btn.GetComponentInChildren<Text>().enabled = true;
 				btn.GetComponent<Button>().enabled = false;
+				btn.GetComponent<Image>().sprite = ctnImg;
+				btn.GetComponent<Image>().color = new Color(0,0,0,1);
 			
 			}
 
@@ -52,7 +59,8 @@ public class Card_Content : MonoBehaviour {
 				//Nao Mostrar
 				btn.GetComponentInChildren<Text>().enabled = false;
 				btn.GetComponent<Button>().enabled = true;
-
+				btn.GetComponent<Image>().sprite = cardImg;
+				btn.GetComponent<Image>().color = new Color(1,1,1,1);
 			}
 		}
 	}
