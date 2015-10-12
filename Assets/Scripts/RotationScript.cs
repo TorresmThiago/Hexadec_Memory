@@ -74,7 +74,6 @@ public class RotationScript : MonoBehaviour {
 	IEnumerator CompareCard(){
 		yield return new WaitForSeconds (.5f);
 		if (verify()) {
-			//Implementar fadeOut
 			Destroy (card_1);
 			Destroy (card_2);
 			direction = null;

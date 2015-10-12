@@ -4,15 +4,10 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class Card_Content : MonoBehaviour {
-	
-	private List<Color> Clrs = new List<Color>();
+
 	private string tempClr;
 	public Sprite cardImg;
 	public Sprite ctnImg;
-
-	public void GetColor(Color clr){
-		Clrs.Add (clr);	
-	}
 
 	public void Content(GameObject btn){
 

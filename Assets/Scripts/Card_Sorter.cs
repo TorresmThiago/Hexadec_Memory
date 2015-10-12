@@ -39,20 +39,17 @@ public class Card_Sorter : MonoBehaviour {
 
 	void Fill(){
 
-		for (int i = 0; i < 9; i++) {
-			Color rdColor = new Color(Random.value, Random.value, Random.value, 1.0f);
-			gameObject.GetComponent<Card_Content>().GetColor(rdColor);
+		string dificulty = PlayerPrefs.GetString ("dificulty"); 
+		List<string> clrs = GetComponent<ColorLibrary> ().gameSort (dificulty);
 
-			int r = (int)Mathf.Floor(rdColor.r * 255);
-			int g = (int)Mathf.Floor(rdColor.g * 255);
-			int b = (int)Mathf.Floor(rdColor.b * 255);
-			string toShow = r.ToString("X2") + g.ToString("X2") + b.ToString("X2");
+		for (int i = 0; i < 9; i++) {
 			
-			string code = "#" + toShow;
-			string color = "C" + toShow;
+			string code = "#" + clrs[i];
+			string color = "C" + clrs[i];
 
 			rdColors.Add(code);
 			rdColors.Add(color);
+
 		}
 
 		SortCards ();
