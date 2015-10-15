@@ -18,19 +18,8 @@ public class Card_Content : MonoBehaviour {
 
 			if((int)btn.transform.localEulerAngles.y >= 90){
 				//Mostrar
-
-				for(int i = 0; i < Clrs.Count; i++){
-
-					int r = (int)Mathf.Floor(Clrs[i].r * 255);
-					int g = (int)Mathf.Floor(Clrs[i].g * 255);
-					int b = (int)Mathf.Floor(Clrs[i].b * 255);
-					string toShow = "C" + r.ToString("X2") + g.ToString("X2") + b.ToString("X2");
-
-					if(toShow == crdCode){
-						btn.GetComponent<Image>().color = Clrs[i];
-						btn.GetComponent<Image>().sprite = ctnImg;
-					}
-				}
+				btn.GetComponent<Image>().color = new Color();
+				btn.GetComponent<Image>().sprite = ctnImg;
 			}
 			
 			if((int)btn.transform.localEulerAngles.y >= 270){

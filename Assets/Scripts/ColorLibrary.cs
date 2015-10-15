@@ -5,18 +5,43 @@ using System.Collections.Generic;
 
 public class ColorLibrary : MonoBehaviour {
 	
+	private List<string> tempClrs = new List<string> ();
 	private List<string> Clrs = new List<string> ();
 
 	private void startEasy(){
-		Clrs.Add("FF0000");
+		tempClrs.Add("FF0000"); tempClrs.Add("FFDD00"); tempClrs.Add("FF0000"); tempClrs.Add("FF0000"); tempClrs.Add("FF0000"); tempClrs.Add("FF0000");
+		tempClrs.Add("FF0000"); tempClrs.Add("FF0000"); tempClrs.Add("FF0000"); tempClrs.Add("FF0000"); tempClrs.Add("FF0000"); tempClrs.Add("FF0000");
+		tempClrs.Add("FF0000"); tempClrs.Add("FF0000"); tempClrs.Add("FF0000"); tempClrs.Add("FF0000"); tempClrs.Add("FF0000"); tempClrs.Add("FF0000");
+
+		for (int i = 0; i < 9; i++) {
+			int index = Random.Range(0, tempClrs.Count);
+			Clrs.Add(tempClrs[index]);
+			tempClrs.Remove(tempClrs[index]);
+		}
 	}
 
 	private void startMedium(){
-		Clrs.Add("FF0023");
+		tempClrs.Add("FF0000"); tempClrs.Add("FF0000"); tempClrs.Add("FF0000"); tempClrs.Add("FF0000"); tempClrs.Add("FF0000"); tempClrs.Add("FF0000");
+		tempClrs.Add("FF0000"); tempClrs.Add("FF0000"); tempClrs.Add("FF0000"); tempClrs.Add("FF0000"); tempClrs.Add("FF0000"); tempClrs.Add("FF0000");
+		tempClrs.Add("FF0000"); tempClrs.Add("FF0000"); tempClrs.Add("FF0000"); tempClrs.Add("FF0000"); tempClrs.Add("FF0000"); tempClrs.Add("FF0000");
+	
+		for (int i = 0; i < 9; i++) {
+			int index = Random.Range(0, tempClrs.Count);
+			Clrs.Add(tempClrs[index]);
+			tempClrs.Remove(tempClrs[index]);
+		}
 	}
 
 	private void startHard(){
-		Clrs.Add("A9B140");
+		for (int i = 0; i < 9; i++) {
+
+			int r = Random.Range(0, 255);
+			int g = Random.Range(0, 255);
+			int b = Random.Range(0, 255);
+			string rgb = r.ToString("X2") + g.ToString("X2") + b.ToString("X2");
+			Clrs.Add(rgb);
+
+		}
 	}
 
 	public List<string> gameSort(string dificulty){
@@ -28,6 +53,6 @@ public class ColorLibrary : MonoBehaviour {
 			startHard();
 		}
 
-		return Clrs;
+		return tempClrs;
 	}
 }
