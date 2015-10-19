@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
@@ -9,16 +10,30 @@ public class Card_Content : MonoBehaviour {
 	public Sprite cardImg;
 	public Sprite ctnImg;
 
+	private float returnToColor(string clrHex){
+		
+		int num = Int32.Parse(clrHex, System.Globalization.NumberStyles.HexNumber);
+		float color = num / 255;
+		
+		return color;
+
+	}
+
 	public void Content(GameObject btn){
 
 		string crdCode = btn.GetComponentInChildren<Text> ().text;
 
 		if (crdCode[0] == 'C') {
 
+			// 0 1 2 3 4 5 6
+
+			float r = returnToColor(crdCode.Substring(1,2));
+			float g = returnToColor(crdCode.Substring(3,2));
+			float b = returnToColor(crdCode.Substring(5,2));
 
 			if((int)btn.transform.localEulerAngles.y >= 90){
 				//Mostrar
-				btn.GetComponent<Image>().color = new Color();
+				btn.GetComponent<Image>().color = new Color(r,g,b,1);
 				btn.GetComponent<Image>().sprite = ctnImg;
 			}
 			
