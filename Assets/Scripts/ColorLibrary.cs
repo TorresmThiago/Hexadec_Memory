@@ -9,9 +9,10 @@ public class ColorLibrary : MonoBehaviour {
 	private List<string> Clrs = new List<string> ();
 
 	private void startEasy(){
-		tempClrs.Add("FF0000"); tempClrs.Add("FFDD00"); tempClrs.Add("FF0000"); tempClrs.Add("FF0000"); tempClrs.Add("FF0000"); tempClrs.Add("FF0000");
-		tempClrs.Add("FF0000"); tempClrs.Add("FF0000"); tempClrs.Add("FF0000"); tempClrs.Add("FF0000"); tempClrs.Add("FF0000"); tempClrs.Add("FF0000");
-		tempClrs.Add("FF0000"); tempClrs.Add("FF0000"); tempClrs.Add("FF0000"); tempClrs.Add("FF0000"); tempClrs.Add("FF0000"); tempClrs.Add("FF0000");
+		//Cores primarias       //Combinaçao entre 2
+		tempClrs.Add("FF0000"); tempClrs.Add("FFFF00"); tempClrs.Add("FF0000"); tempClrs.Add("FF0000"); tempClrs.Add("FF0000"); tempClrs.Add("FF0000");
+		tempClrs.Add("00FF00"); tempClrs.Add("FF00FF"); tempClrs.Add("FF0000"); tempClrs.Add("FF0000"); tempClrs.Add("FF0000"); tempClrs.Add("FF0000");
+		tempClrs.Add("0000FF"); tempClrs.Add("00FFFF"); tempClrs.Add("FF0000"); tempClrs.Add("FF0000"); tempClrs.Add("FF0000"); tempClrs.Add("FF0000");
 
 		for (int i = 0; i < 9; i++) {
 			int index = Random.Range(0, tempClrs.Count);
