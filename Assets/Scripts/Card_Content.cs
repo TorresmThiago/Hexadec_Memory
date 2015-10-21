@@ -12,8 +12,9 @@ public class Card_Content : MonoBehaviour {
 
 	private float returnToColor(string clrHex){
 		
-		int num = Int32.Parse(clrHex, System.Globalization.NumberStyles.HexNumber);
-		float color = num / 255;
+		int num = Convert.ToInt32 (clrHex, 16);
+		float color = (float)(num) / 255;
+
 		
 		return color;
 
@@ -24,8 +25,6 @@ public class Card_Content : MonoBehaviour {
 		string crdCode = btn.GetComponentInChildren<Text> ().text;
 
 		if (crdCode[0] == 'C') {
-
-			// 0 1 2 3 4 5 6
 
 			float r = returnToColor(crdCode.Substring(1,2));
 			float g = returnToColor(crdCode.Substring(3,2));
