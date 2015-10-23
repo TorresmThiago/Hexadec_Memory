@@ -78,6 +78,7 @@ public class RotationScript : MonoBehaviour {
 			Destroy (card_1);
 			Destroy (card_2);
 			input.GetComponentInChildren<Text>().text = "";
+			input.GetComponent<Image>().color = new Color(0,0,0,1);
 			direction = null;
 		} else {
 			direction = "Back";

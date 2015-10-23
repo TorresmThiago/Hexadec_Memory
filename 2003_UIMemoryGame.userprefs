@@ -1,15 +1,15 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\ColorLibrary.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Card_Sorter.cs">
     <Files>
-      <File FileName="2003_UIMemoryGame.sln" Line="41" Column="1" />
-      <File FileName="Assets\Scripts\ColorLibrary.cs" Line="8" Column="54" />
+      <File FileName="2003_UIMemoryGame.sln" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Card_Content.cs" Line="57" Column="56" />
+      <File FileName="Assets\Scripts\ColorLibrary.cs" Line="57" Column="14" />
       <File FileName="Assets\Scripts\ButtonManager.cs" Line="17" Column="1" />
-      <File FileName="Assets\Scripts\Card_Content.cs" Line="18" Column="15" />
-      <File FileName="Assets\Scripts\Card_Sorter.cs" Line="65" Column="1" />
-      <File FileName="Assets\Scripts\CheckMatch.cs" Line="24" Column="2" />
-      <File FileName="Assets\Scripts\RotationScript.cs" Line="101" Column="2" />
-      <File FileName="Assets\Scripts\Title_Animation.cs" Line="34" Column="1" />
+      <File FileName="Assets\Scripts\Card_Sorter.cs" Line="42" Column="27" />
+      <File FileName="Assets\Scripts\CheckMatch.cs" Line="24" Column="1" />
+      <File FileName="Assets\Scripts\RotationScript.cs" Line="76" Column="23" />
+      <File FileName="Assets\Scripts\Title_Animation.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

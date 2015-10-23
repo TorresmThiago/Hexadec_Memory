@@ -36,12 +36,18 @@ public class Card_Content : MonoBehaviour {
 				//Mostrar
 				btn.GetComponent<Image>().color = new Color(r,g,b,1);
 				btn.GetComponent<Image>().sprite = ctnImg;
+
+				//Mostrar Color Carta no InputField
+				input.GetComponent<Image>().color = new Color(r,g,b,1);
 			}
 			
 			if((int)btn.transform.localEulerAngles.y >= 270){
 				//Nao Mostrar
 				btn.GetComponent<Image>().color = new Color(1,1,1,1);
 				btn.GetComponent<Image>().sprite = cardImg;
+
+				//Nao Mostrar Color Carta no InputField
+				input.GetComponent<Image>().color = new Color(0,0,0,1);
 			}
 
 		} else if (crdCode[0] == '#') {
