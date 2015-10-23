@@ -7,6 +7,7 @@ using System.Collections.Generic;
 public class Card_Content : MonoBehaviour {
 
 	private string tempClr;
+	public GameObject input;
 	public Sprite cardImg;
 	public Sprite ctnImg;
 
@@ -51,7 +52,9 @@ public class Card_Content : MonoBehaviour {
 				btn.GetComponent<Button>().enabled = false;
 				btn.GetComponent<Image>().sprite = ctnImg;
 				btn.GetComponent<Image>().color = new Color(0,0,0,1);
-			
+
+				//Mostrar Hex Carta no InputField
+				input.GetComponentInChildren<Text>().text = crdCode;
 			}
 
 			if((int)btn.transform.localEulerAngles.y >= 270){
@@ -60,6 +63,9 @@ public class Card_Content : MonoBehaviour {
 				btn.GetComponent<Button>().enabled = true;
 				btn.GetComponent<Image>().sprite = cardImg;
 				btn.GetComponent<Image>().color = new Color(1,1,1,1);
+
+				//Nao Mostrar Hex Carta no InputField
+				input.GetComponentInChildren<Text>().text = "";
 			}
 		}
 	}

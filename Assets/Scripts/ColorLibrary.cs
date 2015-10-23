@@ -54,6 +54,6 @@ public class ColorLibrary : MonoBehaviour {
 			startHard();
 		}
 
-		return tempClrs;
+		return Clrs;
 	}
 }

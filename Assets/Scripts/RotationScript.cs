@@ -6,6 +6,7 @@ public class RotationScript : MonoBehaviour {
 
 	public GameObject card_1 = null;
 	public GameObject card_2 = null;
+	public GameObject input;
 	private string direction;
 	private bool hasCalled = false;
 
@@ -76,6 +77,7 @@ public class RotationScript : MonoBehaviour {
 		if (verify()) {
 			Destroy (card_1);
 			Destroy (card_2);
+			input.GetComponentInChildren<Text>().text = "";
 			direction = null;
 		} else {
 			direction = "Back";

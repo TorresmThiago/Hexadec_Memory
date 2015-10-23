@@ -39,7 +39,7 @@ public class Card_Sorter : MonoBehaviour {
 
 	void Fill(){
 
-		string dificulty = "easy";//PlayerPrefs.GetString ("dificulty"); 
+		string dificulty = "hard";//PlayerPrefs.GetString ("dificulty"); 
 		List<string> clrs = GetComponent<ColorLibrary> ().gameSort(dificulty);
 
 		for (int i = 0; i < 9; i++) {
