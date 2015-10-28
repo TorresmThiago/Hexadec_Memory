@@ -1,16 +1,16 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Title_Animation.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\ColorLibrary.cs">
     <Files>
-      <File FileName="Assets\Scripts\AudioController.cs" Line="16" Column="3" />
-      <File FileName="Assets\Scripts\ButtonManager.cs" Line="43" Column="16" />
-      <File FileName="Assets\Scripts\Card_Content.cs" Line="17" Column="36" />
-      <File FileName="Assets\Scripts\Card_Sorter.cs" Line="62" Column="35" />
-      <File FileName="Assets\Scripts\CheckMatch.cs" Line="24" Column="1" />
-      <File FileName="Assets\Scripts\ColorLibrary.cs" Line="58" Column="19" />
-      <File FileName="Assets\Scripts\RotationScript.cs" Line="10" Column="5" />
-      <File FileName="Assets\Scripts\Title_Animation.cs" Line="16" Column="66" />
-      <File FileName="Assets\Faders\Fader_Behaviour.cs" Line="1" Column="1" />
+      <File FileName="..\OficinaIntegrada-2015\Distrito_23\Assets\MouseActions\ChangeScene.cs" Line="1" Column="1" />
+      <File FileName="..\OficinaIntegrada-2015\Distrito_23\Assets\Player\Player_Mov.cs" Line="107" Column="2" />
+      <File FileName="..\OficinaIntegrada-2015\Distrito_23\Assets\DialogueBoxFolder\Scripts\OpenDialogue.cs" Line="1" Column="1" />
+      <File FileName="..\OficinaIntegrada-2015\Distrito_23\Assets\OpenedSafe.cs" Line="1" Column="1" />
+      <File FileName="..\OficinaIntegrada-2015\Distrito_23\Assets\DialogueBoxFolder\Scripts\DialogueBoxBehaviour.cs" Line="1" Column="1" />
+      <File FileName="..\OficinaIntegrada-2015\Distrito_23\Assets\00_OpenGame\IntroPass.cs" Line="1" Column="1" />
+      <File FileName="..\OficinaIntegrada-2015\Distrito_23\Assets\NeedKeyDoor.cs" Line="1" Column="1" />
+      <File FileName="..\OficinaIntegrada-2015\Distrito_23\Assets\GameController\GameController.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\ColorLibrary.cs" Line="19" Column="25" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
