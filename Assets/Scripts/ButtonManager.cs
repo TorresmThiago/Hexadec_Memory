@@ -3,9 +3,16 @@ using System.Collections;
 
 public class ButtonManager : MonoBehaviour {
 
+	//Just for the credits, my bad :C
+	public GameObject fader;
+
 	public void LoadScene(){
 
 		switch (gameObject.tag) {
+
+			case "Menu":
+				Instantiate(fader);
+				break;
 		
 			case "Play":
 				Application.LoadLevel (1);

@@ -57,7 +57,7 @@ public class Card_Sorter : MonoBehaviour {
 
 	void Update(){
 		if (SrtGrid.GetComponentInChildren<Button> () == null) {
-			Application.LoadLevel (0);
+			Application.LoadLevel (3);
 		}
 	}
 
