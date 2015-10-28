@@ -57,6 +57,9 @@ public class Card_Sorter : MonoBehaviour {
 
 	void Update(){
 		if (SrtGrid.GetComponentInChildren<Button> () == null) {
+			float start = PlayerPrefs.GetFloat("Time");
+			float end = Time.time - start;
+			PlayerPrefs.SetFloat("DeltaTime", end);
 			Application.LoadLevel (3);
 		}
 	}

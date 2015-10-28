@@ -3,13 +3,13 @@
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Title_Animation.cs">
     <Files>
       <File FileName="Assets\Scripts\AudioController.cs" Line="16" Column="3" />
-      <File FileName="Assets\Scripts\ButtonManager.cs" Line="12" Column="50" />
-      <File FileName="Assets\Scripts\Card_Content.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Card_Sorter.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\CheckMatch.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\ColorLibrary.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\RotationScript.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Title_Animation.cs" Line="25" Column="35" />
+      <File FileName="Assets\Scripts\ButtonManager.cs" Line="43" Column="16" />
+      <File FileName="Assets\Scripts\Card_Content.cs" Line="17" Column="36" />
+      <File FileName="Assets\Scripts\Card_Sorter.cs" Line="62" Column="35" />
+      <File FileName="Assets\Scripts\CheckMatch.cs" Line="24" Column="1" />
+      <File FileName="Assets\Scripts\ColorLibrary.cs" Line="58" Column="19" />
+      <File FileName="Assets\Scripts\RotationScript.cs" Line="10" Column="5" />
+      <File FileName="Assets\Scripts\Title_Animation.cs" Line="16" Column="66" />
       <File FileName="Assets\Faders\Fader_Behaviour.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>

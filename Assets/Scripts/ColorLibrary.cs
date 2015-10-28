@@ -54,6 +54,8 @@ public class ColorLibrary : MonoBehaviour {
 			startHard();
 		}
 
+		PlayerPrefs.SetFloat ("Time", Time.time);
+		print (Time.time);
 		return Clrs;
 	}
 }

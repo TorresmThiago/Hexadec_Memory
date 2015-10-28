@@ -7,6 +7,7 @@ public class Title_Animation : MonoBehaviour {
 	public Camera MainCamera;
 	public GameObject Wave;
 	public GameObject Audio;
+	public GameObject Delta;
 	public float time;
 	private Color bgColor;
 	private bool onMenu;
@@ -19,6 +20,10 @@ public class Title_Animation : MonoBehaviour {
 
 	void Start(){
 		StartCoroutine (ColorShifter ());
+		if (Application.loadedLevel == 3) {
+			float deltaTime = PlayerPrefs.GetFloat("DeltaTime");
+			Delta.GetComponent<Text>().text = "" + Mathf.FloorToInt(deltaTime) + " segundos";
+		}
 	}
 	
 	IEnumerator ColorShifter(){
