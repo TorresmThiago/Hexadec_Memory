@@ -10,9 +10,9 @@ public class ColorLibrary : MonoBehaviour {
 
 	private void startEasy(){
 		//Cores primarias       //Combinaçao entre 2
-		tempClrs.Add("FF0000"); tempClrs.Add("FFFF00"); tempClrs.Add("FF0000"); tempClrs.Add("FF0000"); tempClrs.Add("FF0000"); tempClrs.Add("FF0000");
-		tempClrs.Add("00FF00"); tempClrs.Add("FF00FF"); tempClrs.Add("FF0000"); tempClrs.Add("FF0000"); tempClrs.Add("FF0000"); tempClrs.Add("FF0000");
-		tempClrs.Add("0000FF"); tempClrs.Add("00FFFF"); tempClrs.Add("FF0000"); tempClrs.Add("FF0000"); tempClrs.Add("FF0000"); tempClrs.Add("FF0000");
+		tempClrs.Add("FF0000"); tempClrs.Add("FFFF00"); tempClrs.Add("33CCCC"); tempClrs.Add("3366FF"); tempClrs.Add("CC6600"); tempClrs.Add("663300");
+		tempClrs.Add("00FF00"); tempClrs.Add("FF00FF"); tempClrs.Add("33CC33"); tempClrs.Add("FF6600"); tempClrs.Add("00CC00"); tempClrs.Add("CCCCCC");
+		tempClrs.Add("0000FF"); tempClrs.Add("00FFFF"); tempClrs.Add("FF5050"); tempClrs.Add("66FF33"); tempClrs.Add("660066"); tempClrs.Add("66FFCC");
 
 		for (int i = 0; i < 9; i++) {
 			int index = Random.Range(0, tempClrs.Count);
@@ -22,9 +22,9 @@ public class ColorLibrary : MonoBehaviour {
 	}
 
 	private void startMedium(){
-		tempClrs.Add("FF0000"); tempClrs.Add("FF0000"); tempClrs.Add("FF0000"); tempClrs.Add("FF0000"); tempClrs.Add("FF0000"); tempClrs.Add("FF0000");
-		tempClrs.Add("FF0000"); tempClrs.Add("FF0000"); tempClrs.Add("FF0000"); tempClrs.Add("FF0000"); tempClrs.Add("FF0000"); tempClrs.Add("FF0000");
-		tempClrs.Add("FF0000"); tempClrs.Add("FF0000"); tempClrs.Add("FF0000"); tempClrs.Add("FF0000"); tempClrs.Add("FF0000"); tempClrs.Add("FF0000");
+		tempClrs.Add("009966"); tempClrs.Add("8B0000"); tempClrs.Add("B8FF00"); tempClrs.Add("C0000F"); tempClrs.Add("232323"); tempClrs.Add("808000");
+		tempClrs.Add("FFC0CB"); tempClrs.Add("00A200"); tempClrs.Add("FFD700"); tempClrs.Add("00FF30"); tempClrs.Add("FF7F50"); tempClrs.Add("20B2AA");
+		tempClrs.Add("DDA0DD"); tempClrs.Add("00004C"); tempClrs.Add("FF0045"); tempClrs.Add("00AAFF"); tempClrs.Add("BDB72D"); tempClrs.Add("E1D4C2");
 	
 		for (int i = 0; i < 9; i++) {
 			int index = Random.Range(0, tempClrs.Count);

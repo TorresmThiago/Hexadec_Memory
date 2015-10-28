@@ -6,9 +6,16 @@ public class Title_Animation : MonoBehaviour {
 
 	public Camera MainCamera;
 	public GameObject Wave;
+	public GameObject Audio;
 	public float time;
 	private Color bgColor;
 	private bool onMenu;
+
+	public void Awake(){
+		GameObject spawned = GameObject.FindGameObjectWithTag("Audio");
+		if (spawned == null)
+			Instantiate (Audio);
+	}
 
 	void Start(){
 		StartCoroutine (ColorShifter ());

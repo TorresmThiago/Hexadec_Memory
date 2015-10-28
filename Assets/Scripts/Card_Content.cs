@@ -16,8 +16,6 @@ public class Card_Content : MonoBehaviour {
 		int num = Convert.ToInt32 (clrHex, 16);
 		float color = (float)(num) / 255;
 
-		print (color);
-
 		return color;
 
 	}

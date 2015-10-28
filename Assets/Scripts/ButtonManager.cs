@@ -1,10 +1,22 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class ButtonManager : MonoBehaviour {
 
 	//Just for the credits, my bad :C
 	public GameObject fader;
+
+	public IEnumerator menu(){
+		yield return new WaitForSeconds (1.37f);
+		gameObject.GetComponent<Button> ().interactable = true;
+	}
+
+	public void Start(){
+		if (Application.loadedLevel == 0) {
+			StartCoroutine(menu ());
+		}
+	}
 
 	public void LoadScene(){
 
