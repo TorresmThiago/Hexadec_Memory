@@ -15,8 +15,11 @@ public class Title_Animation : MonoBehaviour {
 	}
 	
 	IEnumerator ColorShifter(){
-		yield return new WaitForSeconds (time);
-		Instantiate (Wave);
+		if (Application.loadedLevel == 0) {
+			yield return new WaitForSeconds (time);
+			Instantiate (Wave);
+		}
+
 		while (true){ 
 			bgColor = new Color(Random.value, Random.value, Random.value, 0.5f);
 

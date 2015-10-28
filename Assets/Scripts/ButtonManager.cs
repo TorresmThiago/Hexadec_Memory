@@ -4,13 +4,29 @@ using System.Collections;
 public class ButtonManager : MonoBehaviour {
 
 	public void LoadScene(){
-		if (gameObject.tag == "Play"/* set stuff for level*/) {
-			PlayerPrefs.SetString(/*The chosen level*/"dificulty", "easy");
-			Application.LoadLevel (1);
-		} else if (gameObject.tag == "Credits") {
-			Application.LoadLevel (2);
-		} else if (gameObject.tag == "Menu") {
-			Application.LoadLevel (0);
+
+		switch (gameObject.tag) {
+		
+			case "Play":
+				Application.LoadLevel (1);
+				break;
+
+			case "Easy":
+				Application.LoadLevel (2);
+				PlayerPrefs.SetString ("dificulty", "easy");
+				break;
+
+			case "Medium":
+				Application.LoadLevel (2);
+				PlayerPrefs.SetString ("dificulty", "medium");
+				break;
+
+			case "Hard":
+				Application.LoadLevel (2);
+				PlayerPrefs.SetString ("dificulty", "You shall suffer.");
+				break;
+			
+		
 		}
 	}
 }
