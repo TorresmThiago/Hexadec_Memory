@@ -5,7 +5,7 @@ public class AudioController : MonoBehaviour {
 	
 	IEnumerator StartAudio(){
 		yield return new WaitForSeconds (1.37f);
-		gameObject.audio.Play ();
+		gameObject.GetComponent<AudioSource>().Play ();
 	}
 	
 	void Awake(){
@@ -17,5 +17,4 @@ public class AudioController : MonoBehaviour {
 		if(spawned.Length == 1)
 			DontDestroyOnLoad (gameObject);	
 	}
-	
 }

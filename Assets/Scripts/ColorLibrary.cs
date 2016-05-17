@@ -41,7 +41,6 @@ public class ColorLibrary : MonoBehaviour {
 			int b = Random.Range(0, 255);
 			string rgb = r.ToString("X2") + g.ToString("X2") + b.ToString("X2");
 			Clrs.Add(rgb);
-
 		}
 	}
 

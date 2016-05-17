@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -24,34 +25,26 @@ public class Card_Sorter : MonoBehaviour {
 			rdColors[randomIndex] = temp;
 		}
 		
-		for(int i = 0; i < rdColors.Count; i++){
-
-			if(Grid.GetComponentInChildren<Button>().tag == "Untagged"){
-				Grid.GetComponentInChildren<Button>().GetComponentInChildren<Text>().text = rdColors[index];
-				Grid.GetComponentInChildren<Button>().transform.parent = SrtGrid.transform;
+		for (int i = 0; i < rdColors.Count; i++) {
+			if (Grid.GetComponentInChildren<Button> ().tag == "Untagged") {
+				Grid.GetComponentInChildren<Button> ().GetComponentInChildren<Text> ().text = rdColors [index];
+				Grid.GetComponentInChildren<Button>().transform.SetParent(SrtGrid.transform, false);
 			}
-
 			index++;
-
 		}
-
 	}
 
 	void Fill(){
-
 		string dificulty = PlayerPrefs.GetString ("dificulty"); 
 		List<string> clrs = GetComponent<ColorLibrary> ().gameSort(dificulty);
 
 		for (int i = 0; i < 9; i++) {
-			
 			string code = "#" + clrs[i];
 			string color = "C" + clrs[i];
 
 			rdColors.Add(code);
 			rdColors.Add(color);
-
 		}
-
 		SortCards ();
 	}
 
@@ -60,8 +53,7 @@ public class Card_Sorter : MonoBehaviour {
 			float start = PlayerPrefs.GetFloat("Time");
 			float end = Time.time - start;
 			PlayerPrefs.SetFloat("DeltaTime", end);
-			Application.LoadLevel (3);
+			SceneManager.LoadScene (3);
 		}
 	}
-
 }

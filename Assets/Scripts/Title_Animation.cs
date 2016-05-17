@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using System.Collections;
 
 public class Title_Animation : MonoBehaviour {
@@ -20,14 +21,14 @@ public class Title_Animation : MonoBehaviour {
 
 	void Start(){
 		StartCoroutine (ColorShifter ());
-		if (Application.loadedLevel == 3) {
+		if (SceneManager.GetActiveScene().buildIndex == 3) {
 			float deltaTime = PlayerPrefs.GetFloat("DeltaTime");
 			Delta.GetComponent<Text>().text = "" + Mathf.FloorToInt(deltaTime) + " segundos";
 		}
 	}
 	
 	IEnumerator ColorShifter(){
-		if (Application.loadedLevel == 0) {
+		if (SceneManager.GetActiveScene().buildIndex == 0) {
 			yield return new WaitForSeconds (time);
 			Instantiate (Wave);
 		}

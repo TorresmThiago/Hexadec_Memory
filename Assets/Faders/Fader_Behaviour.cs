@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using System.Collections;
 
 public class Fader_Behaviour : MonoBehaviour {
@@ -10,11 +11,11 @@ public class Fader_Behaviour : MonoBehaviour {
 	
 	void Awake () {
 
-		guiTexture.pixelInset = new Rect(0f, 0f, Screen.width, Screen.height);
+		GetComponent<GUITexture>().pixelInset = new Rect(0f, 0f, Screen.width, Screen.height);
 		if (FadeTo == "Black") {
-			guiTexture.color = Color.clear;
+			GetComponent<GUITexture>().color = Color.clear;
 		} else if (FadeTo == "Clear") {
-			guiTexture.color = Color.black;
+			GetComponent<GUITexture>().color = Color.black;
 		}
 	}
 	
@@ -30,11 +31,11 @@ public class Fader_Behaviour : MonoBehaviour {
 	
 	
 	void FadeToClear () {
-		guiTexture.color = Color.Lerp(guiTexture.color, Color.clear, fadeSpeed * Time.deltaTime);
+		GetComponent<GUITexture>().color = Color.Lerp(GetComponent<GUITexture>().color, Color.clear, fadeSpeed * Time.deltaTime);
 
-		if (guiTexture.color.a <= 0.0005f) {
-			guiTexture.color = Color.clear;
-			guiTexture.enabled = false;
+		if (GetComponent<GUITexture>().color.a <= 0.0005f) {
+			GetComponent<GUITexture>().color = Color.clear;
+			GetComponent<GUITexture>().enabled = false;
 			Destroy(gameObject);
 		}
 	}
@@ -42,18 +43,17 @@ public class Fader_Behaviour : MonoBehaviour {
 	
 	void FadeToBlack () {
 
-		guiTexture.enabled = true;
-		guiTexture.color = Color.Lerp (guiTexture.color, Color.black, fadeSpeed * Time.deltaTime);
+		GetComponent<GUITexture>().enabled = true;
+		GetComponent<GUITexture>().color = Color.Lerp (GetComponent<GUITexture>().color, Color.black, fadeSpeed * Time.deltaTime);
 
-		if (guiTexture.color.a >= 0.9999f) {
-			guiTexture.color = Color.black;
-			if(instantiateNext != null)
-				Instantiate(instantiateNext);
-			//<HexadecApplication>
-			Application.LoadLevel(0);
-			//Destroy(gameObject);
-			//</HexadecApplication>
+		if (GetComponent<GUITexture>().color.a >= 0.9999f) {
+			GetComponent<GUITexture>().color = Color.black;
 
+			if (instantiateNext != null) {
+				Instantiate (instantiateNext);
+			}
+
+			SceneManager.LoadScene (0);
 		}
 	}	
 }

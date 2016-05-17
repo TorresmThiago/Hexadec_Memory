@@ -48,6 +48,7 @@ public class RotationScript : MonoBehaviour {
 			GetComponent<Card_Content>().Content(card_2);
 		} else if (((card_2 != null) && (card_1 != null)) && (card_2.transform.localEulerAngles.y == 180) && (hasCalled)) {
 			StartCoroutine(CompareCard());
+			Debug.Log ("1");
 			hasCalled = false;
 		}
 	}
@@ -58,37 +59,43 @@ public class RotationScript : MonoBehaviour {
 			card_1.transform.rotation = Quaternion.Slerp (card_1.transform.rotation, newRotation, 0.1f);
 			FixAngle(card_1);
 			GetComponent<Card_Content>().Content(card_1);
+			Debug.Log ("5");
 		}
-		
+
 		if ((card_2 != null) && (card_2.transform.localEulerAngles.y != 0)) {
 			Quaternion newRotation = Quaternion.AngleAxis (0, Vector3.up);
 			card_2.transform.rotation = Quaternion.Slerp (card_2.transform.rotation, newRotation, 0.1f);
 			FixAngle(card_2);
 			GetComponent<Card_Content>().Content(card_2);
+			Debug.Log ("6");
 		} else if ((card_2 != null) && (card_2.transform.localEulerAngles.y == 0)) {
 			card_1 = null;
 			card_2 = null;
 			direction = null;
+			Debug.Log ("7");
 		}
 	}
 
 	IEnumerator CompareCard(){
 		yield return new WaitForSeconds (.5f);
+		Debug.Log ("2");
 		if (verify()) {
 			Destroy (card_1);
 			Destroy (card_2);
 			input.GetComponentInChildren<Text>().text = "";
 			input.GetComponent<Image>().color = new Color(0,0,0,1);
 			direction = null;
+			Debug.Log ("3");
 		} else {
 			direction = "Back";
+			Debug.Log ("4");
 		}
 	}
 
 	bool verify(){
-		if (gameObject.GetComponent<CheckMatch> ().check (card_1, card_2))
-			return true;	
-		
+		if (gameObject.GetComponent<CheckMatch> ().check (card_1, card_2)) {
+			return true;
+		}
 		return false;
 	}
 
@@ -98,7 +105,5 @@ public class RotationScript : MonoBehaviour {
 		} else if(direction == "Back"){
 			MoveBack();
 		}
-
 	}
-
 }

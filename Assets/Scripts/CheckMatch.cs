@@ -3,7 +3,6 @@ using UnityEngine.UI;
 using System.Collections;
 
 public class CheckMatch : MonoBehaviour {
-
 	string returnHex(GameObject btn){
 		string hex = btn.GetComponentInChildren<Text> ().text.Substring (1);
 		return hex;
@@ -19,5 +18,4 @@ public class CheckMatch : MonoBehaviour {
 
 		return false;
 	}
-
 }
