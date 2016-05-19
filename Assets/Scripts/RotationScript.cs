@@ -21,14 +21,18 @@ public class RotationScript : MonoBehaviour {
 	}
 
 	void FixAngle(GameObject toFix){
-		switch ((int)toFix.transform.localEulerAngles.y) {
-		case 179:
-			toFix.transform.rotation = Quaternion.Euler (0, 180, 0);
-			hasCalled = true;
+		switch ((int)toFix.transform.localEulerAngles.x) {
+			case 179:	
+				if (direction == "Front") {
+					toFix.transform.rotation = Quaternion.Euler (180, 0, 0);
+					hasCalled = true;
+				}
 			break;
-			
-		case 359:
-			toFix.transform.rotation = Quaternion.Euler (0, 0, 0);
+
+			case 359:
+				if (direction == "Back") {
+					toFix.transform.rotation = Quaternion.Euler (0, 0, 0);
+				}
 			break;
 		}
 	}
@@ -46,64 +50,61 @@ public class RotationScript : MonoBehaviour {
 			card_2.transform.rotation = Quaternion.Slerp (card_2.transform.rotation, newRotation, 0.1f);
 			FixAngle(card_2);
 			GetComponent<Card_Content>().Content(card_2);
-		} else if (((card_2 != null) && (card_1 != null)) && (card_2.transform.localEulerAngles.y == 180) && (hasCalled)) {
+		} 
+
+		if (((card_2 != null) && (card_1 != null)) && (hasCalled)) {
 			StartCoroutine(CompareCard());
-			Debug.Log ("1");
 			hasCalled = false;
 		}
 	}
 
 	public void MoveBack(){
-		if ((card_1 != null) && (card_1.transform.localEulerAngles.y != 0)) {
-			Quaternion newRotation = Quaternion.AngleAxis (0, Vector3.up);
-			card_1.transform.rotation = Quaternion.Slerp (card_1.transform.rotation, newRotation, 0.1f);
-			FixAngle(card_1);
-			GetComponent<Card_Content>().Content(card_1);
-			Debug.Log ("5");
-		}
 
-		if ((card_2 != null) && (card_2.transform.localEulerAngles.y != 0)) {
-			Quaternion newRotation = Quaternion.AngleAxis (0, Vector3.up);
-			card_2.transform.rotation = Quaternion.Slerp (card_2.transform.rotation, newRotation, 0.1f);
-			FixAngle(card_2);
-			GetComponent<Card_Content>().Content(card_2);
-			Debug.Log ("6");
-		} else if ((card_2 != null) && (card_2.transform.localEulerAngles.y == 0)) {
+		if ((card_2 != null) && (card_2.transform.localEulerAngles.y == 0)) {
 			card_1 = null;
 			card_2 = null;
 			direction = null;
-			Debug.Log ("7");
+		} else {
+			
+			if ((card_1 != null) && (card_1.transform.localEulerAngles.y != 0)) {
+				Quaternion newRotation = Quaternion.AngleAxis (0, Vector3.up);
+				card_1.transform.rotation = Quaternion.Slerp (card_1.transform.rotation, newRotation, 0.1f);
+				FixAngle(card_1);
+				GetComponent<Card_Content>().Content(card_1);
+			}
+
+			if ((card_2 != null) && (card_2.transform.localEulerAngles.y != 0)) {
+				Quaternion newRotation = Quaternion.AngleAxis (0, Vector3.up);
+				card_2.transform.rotation = Quaternion.Slerp (card_2.transform.rotation, newRotation, 0.1f);
+				FixAngle(card_2);
+				GetComponent<Card_Content>().Content(card_2);
+			} 
 		}
 	}
+		
 
 	IEnumerator CompareCard(){
 		yield return new WaitForSeconds (.5f);
-		Debug.Log ("2");
 		if (verify()) {
 			Destroy (card_1);
 			Destroy (card_2);
 			input.GetComponentInChildren<Text>().text = "";
 			input.GetComponent<Image>().color = new Color(0,0,0,1);
 			direction = null;
-			Debug.Log ("3");
 		} else {
 			direction = "Back";
-			Debug.Log ("4");
 		}
 	}
 
 	bool verify(){
-		if (gameObject.GetComponent<CheckMatch> ().check (card_1, card_2)) {
-			return true;
-		}
-		return false;
+		return gameObject.GetComponent<CheckMatch> ().check (card_1, card_2);
 	}
 
 	void Update(){
 		if (direction == "Front") {
-			Move();
-		} else if(direction == "Back"){
-			MoveBack();
+			Move ();
+		} else if (direction == "Back") {
+			MoveBack ();
 		}
 	}
 }

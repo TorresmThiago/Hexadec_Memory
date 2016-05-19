@@ -1,16 +1,12 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Title_Animation.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\StartAnimation.cs">
     <Files>
-      <File FileName="Assets\Scripts\Title_Animation.cs" Line="35" Column="3" />
-      <File FileName="Assets\Scripts\AudioController.cs" Line="19" Column="3" />
-      <File FileName="Assets\Scripts\ButtonManager.cs" Line="17" Column="55" />
-      <File FileName="Assets\Scripts\Card_Content.cs" Line="71" Column="2" />
-      <File FileName="Assets\Scripts\Card_Sorter.cs" Line="56" Column="31" />
-      <File FileName="Assets\Scripts\CheckMatch.cs" Line="17" Column="4" />
-      <File FileName="Assets\Scripts\ColorLibrary.cs" Line="17" Column="32" />
-      <File FileName="Assets\Scripts\RotationScript.cs" Line="26" Column="60" />
-      <File FileName="Assets\Faders\Fader_Behaviour.cs" Line="51" Column="4" />
+      <File FileName="Assets\Scripts\StartAnimation.cs" Line="40" Column="1" />
+      <File FileName="Assets\Scripts\RotationScript.cs" Line="25" Column="14" />
+      <File FileName="Assets\Scripts\Card_Content.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\CheckMatch.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Card_Sorter.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
