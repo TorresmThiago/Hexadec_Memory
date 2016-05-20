@@ -16,7 +16,6 @@ public class StartAnimation : MonoBehaviour {
 
 	void rotate(){
 		cards = GameObject.FindGameObjectsWithTag ("StartCards");
-		print (cards.Length);
 		foreach (GameObject card in cards) {
 			Quaternion newRotation = Quaternion.AngleAxis (0, Vector3.down);
 			card.transform.rotation = Quaternion.Slerp (card.transform.rotation, newRotation, 0.1f);
@@ -26,13 +25,18 @@ public class StartAnimation : MonoBehaviour {
 			} 
 		}
 	}
+
+	void setPosition(Vector3 position, GameObject obj){
+		obj.GetComponent<RectTransform> ().position = position;
+	}
 	
 	IEnumerator Lauch(){
-		for (int i = 3; i > -3; i--) {
-			for (int j = -1; j < 2; j++) {
-				GameObject a = (GameObject)Instantiate (card, new Vector3(1.5f * j, 1.4f * i, transform.position.z), Quaternion.identity);
-				a.transform.parent = gameObject.transform.parent;
-				yield return new WaitForSeconds (.125f);
+		for (int i = 0; i < 6; i++) {
+			for (int j = 0; j < 3; j++) {
+				GameObject a = Instantiate (card);
+				a.GetComponent<RectTransform> ().position = new Vector3 (-180 + (180 * j), 375 - (180 * i), 0);
+				a.transform.SetParent (gameObject.transform.parent, false);
+				yield return new WaitForSeconds (.1f);
 			}
 		}
 	}
