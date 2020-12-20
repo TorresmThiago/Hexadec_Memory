@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "com.google.android.appbundle": "file:C:/Users/Torres/Downloads/play-unity-plugins-master/play-unity-plugins-master/GooglePlayPlugins/com.google.android.appbundle",
     "com.unity.collab-proxy": "1.2.16",
     "com.unity.ide.rider": "1.1.4",
     "com.unity.ide.vscode": "1.2.3",
